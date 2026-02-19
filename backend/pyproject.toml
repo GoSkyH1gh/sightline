@@ -1,0 +1,26 @@
+[project]
+name = "supa-search-backend"
+version = "0.1.0"
+description = "Sightline - Local Image Intelligence with CLIP and OCR"
+readme = "README.md"
+requires-python = ">=3.10,<3.11"
+dependencies = [
+    "fastapi[standard]>=0.115.0",
+    "pillow",
+    "faiss-cpu",
+    "numpy",
+    "sentence-transformers>=3.0",
+    "optimum",                        # plain optimum — no [onnxruntime] extra to avoid CPU onnxruntime dep
+    "onnxruntime-directml",
+    # rapidocr-onnxruntime installed with --no-deps to avoid pulling in plain onnxruntime
+    # its actual deps are listed below:
+    "opencv-python-headless",
+    "pyclipper",
+    "shapely",
+    "six",
+    "watchdog",
+    "ml-dtypes>=0.5.4",
+    "onnx>=1.20.1",
+    "optimum-onnx>=0.1.0",
+    "rapidocr-onnxruntime>=1.4.4",
+]
